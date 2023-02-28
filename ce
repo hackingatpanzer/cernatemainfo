@@ -1,0 +1,30 @@
+if syn then
+request = syn.request or http_request
+else
+request = request or http_request
+end
+hookfunction(request, function(...)
+    return {
+    StatusMessage = "OK",
+    Success = true,
+    StatusCode = 200,
+    Headers = {
+        Connection = "keep-alive",
+        ["Content-Length"] = "2",
+        Date = "Wed, 21 Dec 2022 12:09:05 GMT",
+        Etag = "\"10oushnafi62\"",
+        Age = "0",
+        ["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains; preload",
+        ["Cache-Control"] = "public, max-age=0, must-revalidate",
+        ["X-Vercel-Id"] = "fra1::iad1::wmf4d-1671624542996-1ad69d85e152",
+        ["X-Robots-Tag"] = "noindex",
+        ["X-Vercel-Cache"] = "MISS",
+        ["X-Matched-Path"] = "/api/Key/ConfirmKey",
+        Server = "Vercel"
+    },
+    Cookies = {},
+    Body = "OK"
+}
+end);
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TrustsenseDev/Utilities/main/Premier.lua', true))()
