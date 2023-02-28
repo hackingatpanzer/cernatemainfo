@@ -1,0 +1,75 @@
+
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("NukeVsCity Blox Fruits [XMAS]", "BloodTheme")
+
+
+local Tab = Window:NewTab("Blox Fruits")
+
+
+local Section = Tab:NewSection("Auto Farm")
+
+Section:NewToggle("Start Present Farm", "farm item", function(state)
+    if state then
+        _G.AutoConfetti = true
+    else
+        _G.AutoConfetti = false
+    end
+end)
+
+function TP(Point)
+	local Ply = game.Players.LocalPlayer
+	local Char = Ply.Character
+--	repeat
+	Char.Humanoid:ChangeState(15)
+	Char.HumanoidRootPart.CFrame = Point
+	wait()
+	Char.HumanoidRootPart.CFrame = Point
+--	until (Char.HumanoidRootPart.Position - Point.Position).Magnitude <= 20
+end
+function BTP(Pos)
+	local Ply = game.Players.LocalPlayer
+	local Char = Ply.Character
+	Char.HumanoidRootPart.CFrame = Pos
+	wait()
+	Char.HumanoidRootPart.CFrame = Pos
+end
+
+
+
+
+ tookpresent = 0
+   while task.wait() do
+for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
+
+
+
+if tookpresent == 1 then
+     _G.AutoConfetti = false
+end
+
+if _G.AutoConfetti then
+    if v:IsA("Model") and v.Name == "Present" then
+        TP(v.Box.CFrame)
+        fireproximityprompt(v.Box:FindFirstChild(("ProximityPrompt")))
+        fireproximityprompt(v.Box:FindFirstChild(("ProximityPrompt")))
+        fireproximityprompt(v.Box:FindFirstChild(("ProximityPrompt")))
+        tookpresent = tookpresent+1
+    end
+    
+end
+
+
+
+end
+
+
+end
+
+
+
+
